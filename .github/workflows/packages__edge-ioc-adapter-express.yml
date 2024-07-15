@@ -34,11 +34,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: ESLint 检查
-        run: "npx lerna run lint --scope edge-ioc-adapter-express"
+        run: "npx lerna run lint --scope @cc-infra/edge-ioc-adapter-express"
       - name: 单元测试
-        run: "npx lerna run test --scope edge-ioc-adapter-express"
+        run: "npx lerna run test --scope @cc-infra/edge-ioc-adapter-express"
       - name: 构建检查
-        run: "npx lerna run build --scope edge-ioc-adapter-express"
+        run: "npx lerna run build --scope @cc-infra/edge-ioc-adapter-express"
       # TODO: 制品推送
       
 

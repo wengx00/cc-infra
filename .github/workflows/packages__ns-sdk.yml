@@ -34,11 +34,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: ESLint 检查
-        run: "npx lerna run lint --scope ns-sdk"
+        run: "npx lerna run lint --scope @cc-infra/ns-sdk"
       - name: 单元测试
-        run: "npx lerna run test --scope ns-sdk"
+        run: "npx lerna run test --scope @cc-infra/ns-sdk"
       - name: 构建检查
-        run: "npx lerna run build --scope ns-sdk"
+        run: "npx lerna run build --scope @cc-infra/ns-sdk"
       # TODO: 制品推送
       
 
