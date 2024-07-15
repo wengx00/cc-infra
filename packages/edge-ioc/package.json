@@ -1,0 +1,32 @@
+{
+  "name": "@cc-infra/edge-ioc",
+  "version": "1.0.1",
+  "keywords": [
+    "IoC",
+    "edge",
+    "Node.js",
+    "Decorator",
+    "TypeScript",
+    "Cloudflare-Workers"
+  ],
+  "type": "module",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    "types": "./dist/types/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "scripts": {
+    "build": "rollup --config rollup.config.js",
+    "lint": "eslint --ext ts --fix --color --cache --quiet .",
+    "dopublish": "npx lerna run build --scope @cc-infra/edge-ioc && pnpm publish --no-git-checks --access public --registry=https://registry.npmjs.org/"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

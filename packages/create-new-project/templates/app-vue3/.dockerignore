@@ -1,0 +1,8 @@
+.git
+.DS_Store
+.svn
+**/.DS_Store
+**/.svn
+**/.git
+
+node_modules

@@ -1,0 +1,44 @@
+name: "ns-sdk 构建检查流水线"
+
+on:
+  push:
+    paths: 
+      - "packages/ns-sdk/**"
+    branches: 
+      - master
+      - release/*
+      - fix/*
+      - feature/*
+  pull_request:
+    paths: 
+      - "packages/ns-sdk/**"
+    branches:
+      - master
+      - release/*
+      - fix/*
+      - feature/*
+
+jobs:
+  inspections:
+    name: 构建检查和持续集成
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install pnpm
+        run: npm i -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: ESLint 检查
+        run: "npx lerna run lint --scope ns-sdk"
+      - name: 单元测试
+        run: "npx lerna run test --scope ns-sdk"
+      - name: 构建检查
+        run: "npx lerna run build --scope ns-sdk"
+      # TODO: 制品推送
+      
+

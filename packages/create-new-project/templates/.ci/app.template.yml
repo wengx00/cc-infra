@@ -1,0 +1,70 @@
+name: "{{PROJECT_NAME}} 构建检查流水线"
+
+on:
+  push:
+    paths: 
+      - "app/{{PROJECT_NAME}}/**"
+    branches: 
+      - master
+      - release/*
+      - fix/*
+      - feature/*
+  pull_request:
+    paths: 
+      - "app/{{PROJECT_NAME}}/**"
+    branches:
+      - master
+      - release/*
+      - fix/*
+      - feature/*
+
+jobs:
+  inspections:
+    name: 构建检查和持续集成
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install pnpm
+        run: npm i -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: ESLint 检查
+        run: "npx lerna run lint --scope {{PROJECT_NAME}}"
+      - name: 构建检查
+        run: "npx lerna run build --scope {{PROJECT_NAME}}"
+      - name: 获取当前时间戳
+        id: date
+        run: echo "::set-output name=timestamp::$(date +'%Y%m%d%H%M%S')"
+      - name: 设置Docker构建环境
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+      - name: 输出可用环境
+        run: echo ${{ steps.buildx.outputs.platforms }}
+      - name: 登录制品库
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWD }}
+          registry: ccr.ccs.tencentyun.com
+      - name: 构建和推送Docker镜像
+        uses: docker/build-push-action@v2
+        with:
+          context: ./app/{{PROJECT_NAME}}/
+          file: ./app/{{PROJECT_NAME}}/Dockerfile
+          # 所需要的体系结构，可以在 Available platforms 步骤中获取所有的可用架构
+          # platforms: linux/amd64,linux/arm64/v8
+          platforms: linux/amd64
+          # 镜像推送时间
+          push: ${{ github.event_name != 'pull_request' }}
+          # 给清单打上多个标签
+          tags: |
+            ccr.ccs.tencentyun.com/cc-infra/{{PROJECT_NAME}}:${{ steps.date.outputs.timestamp }}
+            ccr.ccs.tencentyun.com/cc-infra/{{PROJECT_NAME}}:latest
+
+      
+

@@ -1,0 +1,45 @@
+{
+  "targetDefaults": {
+    "dev": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "build": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
+    },
+    "preview": {
+      "dependsOn": []
+    },
+    "lint": {
+      "cache": true,
+      "dependsOn": []
+    },
+    "lint:fix": {
+      "dependsOn": []
+    },
+    "preinstall": {
+      "dependsOn": []
+    },
+    "dopublish": {
+      "dependsOn": []
+    },
+    "start": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "test": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ]
+    }
+  }
+}

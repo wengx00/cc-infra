@@ -1,0 +1,18 @@
+{
+  "name": "{{PROJECT_NAME}}",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext ts,tsx,vue --report-unused-disable-directives --fix-dry-run --quiet .",
+    "lint:fix": "eslint --fix --color --cache --quiet --ext ts,tsx,vue .",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

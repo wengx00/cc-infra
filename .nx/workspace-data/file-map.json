@@ -1,0 +1,862 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.4.3",
+  "deps": {
+    "@prisma/client": "^5.16.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "common-utils": "workspace:^",
+    "crypto-js": "^4.2.0",
+    "express": "^4.19.2",
+    "nanoid": "^5.0.7",
+    "pinia": "^2.1.7",
+    "prisma": "^5.16.2",
+    "reflect-metadata": "^0.2.2",
+    "tdesign-vue-next": "^1.9.6",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.3",
+    "@cc-infra/eslint-config": "workspace:^",
+    "@changesets/cli": "^2.27.7",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/crypto-js": "^4.2.2",
+    "@types/express": "^4.17.21",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.12.7",
+    "@types/yargs": "^17.0.32",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "chalk": "4.1.2",
+    "create-new-project": "workspace:^",
+    "cross-env": "^7.0.3",
+    "eslint": "8.56.0",
+    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-vue": "^9.26.0",
+    "fs-extra": "^11.2.0",
+    "husky": "^9.0.11",
+    "inquirer": "^10.0.1",
+    "lerna": "^8.1.6",
+    "rollup": "^4.18.1",
+    "sass": "^1.77.6",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.3",
+    "unplugin-auto-import": "^0.17.6",
+    "unplugin-vue-components": "^0.27.0",
+    "vite": "^5.2.0",
+    "vitest": "^2.0.2",
+    "vue-eslint-parser": "^9.4.3",
+    "vue-tsc": "^2.0.6",
+    "yargs": "^17.7.2"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "3222867398798310637"
+      },
+      {
+        "file": ".nx/workspace-data/d/server-process.json",
+        "hash": "5546413735652322420"
+      },
+      {
+        "file": ".gitattributes",
+        "hash": "4783473927334323378"
+      },
+      {
+        "file": "README.md",
+        "hash": "1615369584530561218"
+      },
+      {
+        "file": "package.json",
+        "hash": "4861194639292417242"
+      },
+      {
+        "file": ".changeset/config.json",
+        "hash": "5554182433925840759"
+      },
+      {
+        "file": ".eslintrc.cjs",
+        "hash": "13713184736274611293"
+      },
+      {
+        "file": ".github/workflows/packages__edge-ioc-adapter-express.yml",
+        "hash": "1389241752077648907"
+      },
+      {
+        "file": ".github/workflows/packages__ns-sdk.yml",
+        "hash": "4523318493367941748"
+      },
+      {
+        "file": "nx.json",
+        "hash": "16327866290396834523"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "5295927524835915940"
+      },
+      {
+        "file": ".github/workflows/packages__edge-ioc.yml",
+        "hash": "14706792227470112038"
+      },
+      {
+        "file": ".changeset/README.md",
+        "hash": "4888845876018830777"
+      },
+      {
+        "file": ".vscode/settings.json",
+        "hash": "10180780859759546841"
+      },
+      {
+        "file": "commitlint.config.js",
+        "hash": "12381178570804986944"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "7375447295452413636"
+      },
+      {
+        "file": ".husky/pre-commit",
+        "hash": "13469207043343598078"
+      },
+      {
+        "file": ".husky/commit-msg",
+        "hash": "1407302808277523102"
+      },
+      {
+        "file": "lerna.json",
+        "hash": "10010256335013790573"
+      },
+      {
+        "file": "pnpm-workspace.yaml",
+        "hash": "14639521381876074089"
+      },
+      {
+        "file": ".changeset/lovely-trainers-hear.md",
+        "hash": "1014988309340006892"
+      }
+    ],
+    "projectFileMap": {
+      "@cc-infra/edge-ioc-adapter-express": [
+        {
+          "file": "packages/edge-ioc-adapter-express/.eslintrc.cjs",
+          "hash": "5439003769666135121"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/.gitignore",
+          "hash": "4524041678099262654"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/.prettierrc",
+          "hash": "5080167169210962932"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/CHANGELOG.md",
+          "hash": "3648042111568951956"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/README.md",
+          "hash": "11321012599919328854"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/package.json",
+          "hash": "5221169220449833361",
+          "deps": [
+            "@cc-infra/edge-ioc",
+            "npm:@types/busboy",
+            "npm:busboy"
+          ]
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/rollup.config.js",
+          "hash": "1444419796296867162"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/src/adapters/formdata.ts",
+          "hash": "5058753198348114162"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/src/adapters/headers.ts",
+          "hash": "3150737380642105540"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/src/adapters/middleware.ts",
+          "hash": "10141939467981589161"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/src/edge/index.ts",
+          "hash": "2288706540474518117"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/src/index.ts",
+          "hash": "15003474594571748755"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/src/utils/common-response.ts",
+          "hash": "13980456267229018378"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/src/utils/datetime.ts",
+          "hash": "8942336716150027467"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/src/utils/ret-error.ts",
+          "hash": "6900678749990465397"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/test/index.spec.ts",
+          "hash": "2966938997360578600"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/tsconfig.json",
+          "hash": "6409677777801069326"
+        }
+      ],
+      "@cc-infra/ns-sdk": [
+        {
+          "file": "packages/ns-sdk/.eslintrc.cjs",
+          "hash": "5439003769666135121"
+        },
+        {
+          "file": "packages/ns-sdk/.gitignore",
+          "hash": "4524041678099262654"
+        },
+        {
+          "file": "packages/ns-sdk/.prettierrc",
+          "hash": "5080167169210962932"
+        },
+        {
+          "file": "packages/ns-sdk/README.md",
+          "hash": "15392878252076670004"
+        },
+        {
+          "file": "packages/ns-sdk/package.json",
+          "hash": "1487615921089322276"
+        },
+        {
+          "file": "packages/ns-sdk/rollup.config.js",
+          "hash": "6702630890082507981"
+        },
+        {
+          "file": "packages/ns-sdk/src/index.ts",
+          "hash": "2075152032043089585"
+        },
+        {
+          "file": "packages/ns-sdk/src/signature/index.ts",
+          "hash": "16251404309054035401"
+        },
+        {
+          "file": "packages/ns-sdk/test/signature.spec.ts",
+          "hash": "17807834554348923048"
+        },
+        {
+          "file": "packages/ns-sdk/tsconfig.json",
+          "hash": "6409677777801069326"
+        }
+      ],
+      "@cc-infra/edge-ioc": [
+        {
+          "file": "packages/edge-ioc/.eslintrc.cjs",
+          "hash": "6859204590200860134"
+        },
+        {
+          "file": "packages/edge-ioc/.gitignore",
+          "hash": "3947031056330784506"
+        },
+        {
+          "file": "packages/edge-ioc/.prettierrc",
+          "hash": "5080167169210962932"
+        },
+        {
+          "file": "packages/edge-ioc/CHANGELOG.md",
+          "hash": "10764379967300088796"
+        },
+        {
+          "file": "packages/edge-ioc/README.md",
+          "hash": "11203265215774656197"
+        },
+        {
+          "file": "packages/edge-ioc/package.json",
+          "hash": "17517143130025923697"
+        },
+        {
+          "file": "packages/edge-ioc/rollup.config.js",
+          "hash": "727461494987530511"
+        },
+        {
+          "file": "packages/edge-ioc/src/core/application.ts",
+          "hash": "4216154305201652459"
+        },
+        {
+          "file": "packages/edge-ioc/src/core/container.ts",
+          "hash": "4818437512315770941"
+        },
+        {
+          "file": "packages/edge-ioc/src/core/factory.ts",
+          "hash": "4104500283214949241"
+        },
+        {
+          "file": "packages/edge-ioc/src/core/index.ts",
+          "hash": "3494364746091178138"
+        },
+        {
+          "file": "packages/edge-ioc/src/decorators/body.ts",
+          "hash": "15980090298657418230"
+        },
+        {
+          "file": "packages/edge-ioc/src/decorators/controller.ts",
+          "hash": "9848476332578288609"
+        },
+        {
+          "file": "packages/edge-ioc/src/decorators/file.ts",
+          "hash": "17263692639087204718"
+        },
+        {
+          "file": "packages/edge-ioc/src/decorators/get.ts",
+          "hash": "9728289353232636755"
+        },
+        {
+          "file": "packages/edge-ioc/src/decorators/index.ts",
+          "hash": "11269544550575289654"
+        },
+        {
+          "file": "packages/edge-ioc/src/decorators/injectable.ts",
+          "hash": "2300298273578922351"
+        },
+        {
+          "file": "packages/edge-ioc/src/decorators/meta-type.ts",
+          "hash": "7772644449735193894"
+        },
+        {
+          "file": "packages/edge-ioc/src/decorators/module.ts",
+          "hash": "4151279270848822194"
+        },
+        {
+          "file": "packages/edge-ioc/src/decorators/param.ts",
+          "hash": "6360952839486150052"
+        },
+        {
+          "file": "packages/edge-ioc/src/decorators/post.ts",
+          "hash": "3005505449874412091"
+        },
+        {
+          "file": "packages/edge-ioc/src/decorators/query.ts",
+          "hash": "1731637743839257881"
+        },
+        {
+          "file": "packages/edge-ioc/src/decorators/request.ts",
+          "hash": "5356341749359027148"
+        },
+        {
+          "file": "packages/edge-ioc/src/decorators/utils.ts",
+          "hash": "2017393897071439679"
+        },
+        {
+          "file": "packages/edge-ioc/src/index.ts",
+          "hash": "6416915822978007668"
+        },
+        {
+          "file": "packages/edge-ioc/src/utils/constants.ts",
+          "hash": "11753309172708796877"
+        },
+        {
+          "file": "packages/edge-ioc/src/utils/exception.ts",
+          "hash": "17364514867311937943"
+        },
+        {
+          "file": "packages/edge-ioc/src/utils/format-log.ts",
+          "hash": "11761999149270935848"
+        },
+        {
+          "file": "packages/edge-ioc/src/utils/index.ts",
+          "hash": "1820060962239569909"
+        },
+        {
+          "file": "packages/edge-ioc/src/utils/types.ts",
+          "hash": "13171806637104896074"
+        },
+        {
+          "file": "packages/edge-ioc/tsconfig.json",
+          "hash": "16512440358552516978"
+        }
+      ],
+      "create-new-project": [
+        {
+          "file": "packages/create-new-project/.eslintrc.cjs",
+          "hash": "4641418929771505615"
+        },
+        {
+          "file": "packages/create-new-project/.gitignore",
+          "hash": "9901836480786866200"
+        },
+        {
+          "file": "packages/create-new-project/.prettierignore",
+          "hash": "10775107447203142802"
+        },
+        {
+          "file": "packages/create-new-project/.prettierrc.yaml",
+          "hash": "10420859978821315880"
+        },
+        {
+          "file": "packages/create-new-project/CHANGELOG.md",
+          "hash": "14453737454647644309"
+        },
+        {
+          "file": "packages/create-new-project/package.json",
+          "hash": "1894180370260688870"
+        },
+        {
+          "file": "packages/create-new-project/rollup.config.js",
+          "hash": "8147010036641692802"
+        },
+        {
+          "file": "packages/create-new-project/src/index.ts",
+          "hash": "11009524952717366853"
+        },
+        {
+          "file": "packages/create-new-project/src/lib/create-edge-app.ts",
+          "hash": "1344386464408520305"
+        },
+        {
+          "file": "packages/create-new-project/src/lib/create-express-app.ts",
+          "hash": "12503584275188347271"
+        },
+        {
+          "file": "packages/create-new-project/src/lib/create-nodejs-packages.ts",
+          "hash": "11498132056657827143"
+        },
+        {
+          "file": "packages/create-new-project/src/lib/create-vue3-app.ts",
+          "hash": "7279628957924402797"
+        },
+        {
+          "file": "packages/create-new-project/src/lib/launcher.ts",
+          "hash": "16521516125902735930"
+        },
+        {
+          "file": "packages/create-new-project/templates/.ci/app-edge.template.yml",
+          "hash": "3699090008664691771"
+        },
+        {
+          "file": "packages/create-new-project/templates/.ci/app-express.template.yml",
+          "hash": "8023799671510420111"
+        },
+        {
+          "file": "packages/create-new-project/templates/.ci/app.template.yml",
+          "hash": "15683578395922664678"
+        },
+        {
+          "file": "packages/create-new-project/templates/.ci/packages-nodejs.template.yml",
+          "hash": "902551511351438835"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/.editorconfig",
+          "hash": "3023801919032192200"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/.eslintrc.cjs",
+          "hash": "8951508319816511274"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/.gitignore",
+          "hash": "5144479009041804738"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/.prettierrc",
+          "hash": "1635569953507007690"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/.prisma/demo.prisma",
+          "hash": "13840275298955613425"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/.prisma/schema.prisma",
+          "hash": "14324072659873287166"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/.vscode/settings.json",
+          "hash": "36890073351943928"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/README.md",
+          "hash": "3843316591977073627"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/package.template.json",
+          "hash": "7489363523683500392"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/rollup.config.js",
+          "hash": "13077631547860531036"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/scripts/add-node-prefix.js",
+          "hash": "15120043972346679176"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/src/AppModule.ts",
+          "hash": "18160789004935035280"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/src/common/PrismaService.ts",
+          "hash": "9470568078012689035"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/src/common/entity/PaginationReq.ts",
+          "hash": "2585597913702741106"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/src/env.d.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/src/index.ts",
+          "hash": "10599284893781868224"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/src/routes/demo/DemoController.ts",
+          "hash": "875302219059218904"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/src/routes/demo/DemoService.ts",
+          "hash": "17215930833144199012"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/src/utils/common-response.ts",
+          "hash": "6954355807351927433"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/src/utils/constants.ts",
+          "hash": "11454172804229641608"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/src/utils/error-response.ts",
+          "hash": "14249802062078693125"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/src/utils/global-pipeline.ts",
+          "hash": "8115081183012338724"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/src/utils/ret-error.ts",
+          "hash": "12971654195392112119"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/test/index.spec.ts",
+          "hash": "7225064588016268993"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/test/tsconfig.json",
+          "hash": "4055591598437142136"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/tsconfig.json",
+          "hash": "659287956345918501"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/vitest.config.ts",
+          "hash": "12427814464596015357"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/worker-configuration.d.ts",
+          "hash": "2797750729350093582"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-edge/wrangler.toml",
+          "hash": "2888255547802002187"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-express/.eslintrc.cjs",
+          "hash": "5439003769666135121"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-express/.gitignore",
+          "hash": "4524041678099262654"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-express/.prettierrc",
+          "hash": "5080167169210962932"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-express/README.md",
+          "hash": "1654090518274988678"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-express/package.template.json",
+          "hash": "15082285305595011361"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-express/rollup.config.js",
+          "hash": "6702630890082507981"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-express/src/AppModule.ts",
+          "hash": "15257108248141051321"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-express/src/index.ts",
+          "hash": "1008353217939763263"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-express/src/routes/demo/DemoController.ts",
+          "hash": "4410787461801824732"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-express/src/routes/demo/DemoService.ts",
+          "hash": "18377986410978490343"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-express/src/routes/demo/entity/ReqEntity.ts",
+          "hash": "8039994680264534048"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-express/src/utils/global-pipeline.ts",
+          "hash": "120230244204710791"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-express/test/index.spec.ts",
+          "hash": "2966938997360578600"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-express/tsconfig.json",
+          "hash": "8990449669031905597"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/.dockerignore",
+          "hash": "12068718065088050283"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/.env",
+          "hash": "16558313544104046686"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/.env.development",
+          "hash": "14163562612584775364"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/.env.production",
+          "hash": "6379790802269049278"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/.eslintrc.cjs",
+          "hash": "16474461260585571513"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/.gitignore",
+          "hash": "4524041678099262654"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/.prettierrc",
+          "hash": "5080167169210962932"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/.vscode/extensions.json",
+          "hash": "2924711551599599544"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/Dockerfile",
+          "hash": "12320386545132230728"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/README.md",
+          "hash": "7485983498369794268"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/index.html",
+          "hash": "13733872961072402284"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/nginx.conf",
+          "hash": "3359555610395213251"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/package.template.json",
+          "hash": "14296649785342309227"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/plugins/plugin-version-generator.ts",
+          "hash": "13782719689008620104"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/public/vite.svg",
+          "hash": "16046085400642193116"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/src/App.vue",
+          "hash": "17895189376484859263"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/src/components/NotFound.vue",
+          "hash": "4988744473075887969"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/src/env.d.ts",
+          "hash": "9624948173525381434"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/src/layout/DefaultLayout.vue",
+          "hash": "4123120298093752340"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/src/main.ts",
+          "hash": "1799645366125812444"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/src/pages/page.vue",
+          "hash": "13810379157941079589"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/src/store/app-config.ts",
+          "hash": "17033513644504722142"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/src/utils/constants.ts",
+          "hash": "2473816712086121106"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/src/utils/interact.ts",
+          "hash": "1010713404473638776"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/src/utils/router/index.ts",
+          "hash": "1889175680965399257"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/tsconfig.json",
+          "hash": "1472598901548075781"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/tsconfig.node.json",
+          "hash": "15287980649378857304"
+        },
+        {
+          "file": "packages/create-new-project/templates/app-vue3/vite.config.ts",
+          "hash": "15402637681762914676"
+        },
+        {
+          "file": "packages/create-new-project/templates/packages-nodejs/.eslintrc.cjs",
+          "hash": "5439003769666135121"
+        },
+        {
+          "file": "packages/create-new-project/templates/packages-nodejs/.gitignore",
+          "hash": "4524041678099262654"
+        },
+        {
+          "file": "packages/create-new-project/templates/packages-nodejs/.prettierrc",
+          "hash": "5080167169210962932"
+        },
+        {
+          "file": "packages/create-new-project/templates/packages-nodejs/README.md",
+          "hash": "6772494337077199291"
+        },
+        {
+          "file": "packages/create-new-project/templates/packages-nodejs/package.template.json",
+          "hash": "11293522369030584235"
+        },
+        {
+          "file": "packages/create-new-project/templates/packages-nodejs/rollup.config.js",
+          "hash": "6702630890082507981"
+        },
+        {
+          "file": "packages/create-new-project/templates/packages-nodejs/src/index.ts",
+          "hash": "13407816099268574123"
+        },
+        {
+          "file": "packages/create-new-project/templates/packages-nodejs/test/index.spec.ts",
+          "hash": "1950271425161264331"
+        },
+        {
+          "file": "packages/create-new-project/templates/packages-nodejs/tsconfig.json",
+          "hash": "6409677777801069326"
+        },
+        {
+          "file": "packages/create-new-project/tsconfig.json",
+          "hash": "9215343112100223550"
+        }
+      ],
+      "@cc-infra/eslint-config": [
+        {
+          "file": "packages/eslint-config/index.js",
+          "hash": "14252469832839275535"
+        },
+        {
+          "file": "packages/eslint-config/package.json",
+          "hash": "367808518652250091",
+          "deps": [
+            "npm:@typescript-eslint/eslint-plugin",
+            "npm:@typescript-eslint/parser",
+            "npm:eslint-config-airbnb-typescript",
+            "npm:eslint-config-prettier",
+            "npm:eslint-import-resolver-typescript",
+            "npm:eslint-plugin-import",
+            "npm:eslint-plugin-jsx-a11y",
+            "npm:eslint-plugin-prettier",
+            "npm:eslint-plugin-react",
+            "npm:eslint-plugin-react-hooks",
+            "npm:eslint",
+            "npm:eslint-config-airbnb"
+          ]
+        }
+      ],
+      "common-utils": [
+        {
+          "file": "packages/common-utils/.eslintrc.cjs",
+          "hash": "12517645477645492783"
+        },
+        {
+          "file": "packages/common-utils/.prettierrc.yaml",
+          "hash": "10420859978821315880"
+        },
+        {
+          "file": "packages/common-utils/CHANGELOG.md",
+          "hash": "568685488183688059"
+        },
+        {
+          "file": "packages/common-utils/package.json",
+          "hash": "9454340944927540834"
+        },
+        {
+          "file": "packages/common-utils/styles/reset.scss",
+          "hash": "5278623455366486372"
+        },
+        {
+          "file": "packages/common-utils/styles/theme.css",
+          "hash": "1874343280583848816"
+        },
+        {
+          "file": "packages/common-utils/styles/utils.scss",
+          "hash": "5694491491169186106"
+        },
+        {
+          "file": "packages/common-utils/tools/debounce.ts",
+          "hash": "10682949539100473656"
+        },
+        {
+          "file": "packages/common-utils/tools/index.ts",
+          "hash": "4680370271519907211"
+        },
+        {
+          "file": "packages/common-utils/tools/throttle.ts",
+          "hash": "14701570345463504107"
+        },
+        {
+          "file": "packages/common-utils/tools/try-catch.ts",
+          "hash": "17769596636223598900"
+        },
+        {
+          "file": "packages/common-utils/tsconfig.json",
+          "hash": "4656498884677088923"
+        },
+        {
+          "file": "packages/common-utils/vue/async-routes.ts",
+          "hash": "1183536396977955148"
+        }
+      ]
+    }
+  }
+}

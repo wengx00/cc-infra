@@ -1,0 +1,26 @@
+{
+  "name": "create-new-project",
+  "version": "1.0.0",
+  "description": "cc-infra 工程项目CLI",
+  "type": "module",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs",
+    "types": "./dist/types/src/index.d.ts"
+  },
+  "scripts": {
+    "build": "rollup --config rollup.config.js",
+    "start": "pnpm build && node ./dist/index.cjs",
+    "lint": "eslint --ext ts --fix --color --cache --quiet ."
+  },
+  "bin": "./dist/index.cjs",
+  "keywords": [],
+  "author": "ccweng",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {}
+}

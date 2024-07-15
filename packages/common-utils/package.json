@@ -1,0 +1,15 @@
+{
+  "name": "common-utils",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "files": [
+    "."
+  ],
+  "scripts": {},
+  "keywords": [],
+  "author": "ccweng",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {}
+}

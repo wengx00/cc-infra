@@ -1,0 +1,4 @@
+commitlint.config.js
+packages/create-new-project/templates
+dist
+node_modules

@@ -1,0 +1,46 @@
+name: "{{PROJECT_NAME}} 构建检查流水线"
+
+on:
+  push:
+    paths: 
+      - "app/{{PROJECT_NAME}}/**"
+    branches: 
+      - master
+      - release/*
+      - fix/*
+      - feature/*
+  pull_request:
+    paths: 
+      - "app/{{PROJECT_NAME}}/**"
+    branches:
+      - master
+      - release/*
+      - fix/*
+      - feature/*
+
+jobs:
+  inspections:
+    name: 构建检查和持续集成
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install pnpm
+        run: npm i -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: ESLint 检查
+        run: "npx lerna run lint --scope {{PROJECT_NAME}}"
+      - name: 构建检查
+        run: "npx lerna run build --scope {{PROJECT_NAME}}"
+      - name: 获取当前时间戳
+        id: date
+        run: echo "::set-output name=timestamp::$(date +'%Y%m%d%H%M%S')"
+      # TODO: 部署到 Cloudflare Workers
+
+      
+

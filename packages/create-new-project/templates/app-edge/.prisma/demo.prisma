@@ -1,0 +1,6 @@
+model Demo {
+  id Int @id @default(autoincrement())
+  deleted Boolean @default(false)
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}

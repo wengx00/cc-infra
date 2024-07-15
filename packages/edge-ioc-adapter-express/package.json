@@ -1,0 +1,32 @@
+{
+  "name": "@cc-infra/edge-ioc-adapter-express",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs",
+    "types": "./dist/types/src/index.d.ts"
+  },
+  "scripts": {
+    "build": "rollup --config rollup.config.js",
+    "start": "pnpm build && node ./dist/index.cjs",
+    "test": "vitest run",
+    "lint": "eslint --ext ts --fix --color --cache --quiet .",
+    "dopublish": "npx lerna run build --scope @cc-infra/edge-ioc-adapter-express && pnpm publish --no-git-checks --access public --registry=https://registry.npmjs.org/"
+  },
+  "keywords": [],
+  "author": "ccweng",
+  "license": "ISC",
+  "dependencies": {
+    "busboy": "^1.6.0"
+  },
+  "devDependencies": {
+    "@cc-infra/edge-ioc": "workspace:^",
+    "@types/busboy": "^1.5.4"
+  }
+}

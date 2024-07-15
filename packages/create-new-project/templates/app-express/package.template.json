@@ -1,0 +1,29 @@
+{
+  "name": "{{PROJECT_NAME}}",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs",
+    "types": "./dist/types/src/index.d.ts"
+  },
+  "scripts": {
+    "build": "rollup --config rollup.config.js",
+    "start": "node ./dist/index.cjs",
+    "watch": "rollup --config rollup.config.js --watch ",
+    "test": "vitest run",
+    "lint": "eslint --ext ts --fix --color --cache --quiet ."
+  },
+  "keywords": [],
+  "author": "ccweng",
+  "license": "ISC",
+  "dependencies": {
+    "@cc-infra/edge-ioc": "workspace:^",
+    "@cc-infra/edge-ioc-adapter-express": "workspace:^"
+  }
+}
