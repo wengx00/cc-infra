@@ -2,6 +2,8 @@
   "version": "6.0",
   "nxVersion": "19.4.3",
   "deps": {
+    "@cc-infra/edge-ioc": "workspace:^",
+    "@cc-infra/edge-ioc-adapter-express": "workspace:^",
     "@prisma/client": "^5.16.2",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
@@ -57,12 +59,40 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "commitlint.config.js",
-        "hash": "12381178570804986944"
+        "file": ".changeset/README.md",
+        "hash": "4888845876018830777"
       },
       {
-        "file": ".changeset/lovely-trainers-hear.md",
-        "hash": "1014988309340006892"
+        "file": ".changeset/config.json",
+        "hash": "5554182433925840759"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "5295927524835915940"
+      },
+      {
+        "file": ".eslintrc.cjs",
+        "hash": "13713184736274611293"
+      },
+      {
+        "file": ".gitattributes",
+        "hash": "4783473927334323378"
+      },
+      {
+        "file": ".github/workflows/packages__edge-ioc-adapter-express.yml",
+        "hash": "12977833119677348217"
+      },
+      {
+        "file": ".github/workflows/packages__edge-ioc.yml",
+        "hash": "16296995907762050833"
+      },
+      {
+        "file": ".github/workflows/packages__ns-sdk.yml",
+        "hash": "6869886018000383736"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "7375447295452413636"
       },
       {
         "file": ".husky/commit-msg",
@@ -73,148 +103,91 @@
         "hash": "13469207043343598078"
       },
       {
-        "file": "nx.json",
-        "hash": "16327866290396834523"
-      },
-      {
-        "file": ".github/workflows/packages__edge-ioc.yml",
-        "hash": "16296995907762050833"
-      },
-      {
         "file": ".vscode/settings.json",
         "hash": "10180780859759546841"
-      },
-      {
-        "file": "package.json",
-        "hash": "4861194639292417242"
-      },
-      {
-        "file": "pnpm-workspace.yaml",
-        "hash": "14639521381876074089"
-      },
-      {
-        "file": "pnpm-lock.yaml",
-        "hash": "3222867398798310637"
-      },
-      {
-        "file": ".changeset/README.md",
-        "hash": "4888845876018830777"
-      },
-      {
-        "file": ".changeset/config.json",
-        "hash": "5554182433925840759"
       },
       {
         "file": "README.md",
         "hash": "1615369584530561218"
       },
       {
-        "file": ".gitignore",
-        "hash": "7375447295452413636"
-      },
-      {
-        "file": ".gitattributes",
-        "hash": "4783473927334323378"
-      },
-      {
-        "file": ".eslintignore",
-        "hash": "5295927524835915940"
-      },
-      {
-        "file": ".nx/workspace-data/d/server-process.json",
-        "hash": "5546413735652322420"
-      },
-      {
-        "file": ".github/workflows/packages__edge-ioc-adapter-express.yml",
-        "hash": "12977833119677348217"
-      },
-      {
-        "file": ".eslintrc.cjs",
-        "hash": "13713184736274611293"
+        "file": "commitlint.config.js",
+        "hash": "12381178570804986944"
       },
       {
         "file": "lerna.json",
         "hash": "10010256335013790573"
       },
       {
-        "file": ".github/workflows/packages__ns-sdk.yml",
-        "hash": "6869886018000383736"
+        "file": "nx.json",
+        "hash": "16327866290396834523"
+      },
+      {
+        "file": "package.json",
+        "hash": "1813428646179868314"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "2653427998432334372"
+      },
+      {
+        "file": "pnpm-workspace.yaml",
+        "hash": "14639521381876074089"
       }
     ],
     "projectFileMap": {
-      "@cc-infra/edge-ioc-adapter-express": [
+      "common-utils": [
         {
-          "file": "packages/edge-ioc-adapter-express/.eslintrc.cjs",
-          "hash": "5439003769666135121"
+          "file": "packages/common-utils/.eslintrc.cjs",
+          "hash": "12517645477645492783"
         },
         {
-          "file": "packages/edge-ioc-adapter-express/.gitignore",
-          "hash": "4524041678099262654"
+          "file": "packages/common-utils/.prettierrc.yaml",
+          "hash": "10420859978821315880"
         },
         {
-          "file": "packages/edge-ioc-adapter-express/.prettierrc",
-          "hash": "5080167169210962932"
+          "file": "packages/common-utils/CHANGELOG.md",
+          "hash": "568685488183688059"
         },
         {
-          "file": "packages/edge-ioc-adapter-express/CHANGELOG.md",
-          "hash": "3648042111568951956"
+          "file": "packages/common-utils/package.json",
+          "hash": "9454340944927540834"
         },
         {
-          "file": "packages/edge-ioc-adapter-express/README.md",
-          "hash": "11321012599919328854"
+          "file": "packages/common-utils/styles/reset.scss",
+          "hash": "5278623455366486372"
         },
         {
-          "file": "packages/edge-ioc-adapter-express/package.json",
-          "hash": "5221169220449833361",
-          "deps": [
-            "@cc-infra/edge-ioc",
-            "npm:@types/busboy",
-            "npm:busboy"
-          ]
+          "file": "packages/common-utils/styles/theme.css",
+          "hash": "1874343280583848816"
         },
         {
-          "file": "packages/edge-ioc-adapter-express/rollup.config.js",
-          "hash": "1444419796296867162"
+          "file": "packages/common-utils/styles/utils.scss",
+          "hash": "5694491491169186106"
         },
         {
-          "file": "packages/edge-ioc-adapter-express/src/adapters/formdata.ts",
-          "hash": "5058753198348114162"
+          "file": "packages/common-utils/tools/debounce.ts",
+          "hash": "10682949539100473656"
         },
         {
-          "file": "packages/edge-ioc-adapter-express/src/adapters/headers.ts",
-          "hash": "3150737380642105540"
+          "file": "packages/common-utils/tools/index.ts",
+          "hash": "4680370271519907211"
         },
         {
-          "file": "packages/edge-ioc-adapter-express/src/adapters/middleware.ts",
-          "hash": "10141939467981589161"
+          "file": "packages/common-utils/tools/throttle.ts",
+          "hash": "14701570345463504107"
         },
         {
-          "file": "packages/edge-ioc-adapter-express/src/edge/index.ts",
-          "hash": "2288706540474518117"
+          "file": "packages/common-utils/tools/try-catch.ts",
+          "hash": "17769596636223598900"
         },
         {
-          "file": "packages/edge-ioc-adapter-express/src/index.ts",
-          "hash": "15003474594571748755"
+          "file": "packages/common-utils/tsconfig.json",
+          "hash": "4656498884677088923"
         },
         {
-          "file": "packages/edge-ioc-adapter-express/src/utils/common-response.ts",
-          "hash": "13980456267229018378"
-        },
-        {
-          "file": "packages/edge-ioc-adapter-express/src/utils/datetime.ts",
-          "hash": "8942336716150027467"
-        },
-        {
-          "file": "packages/edge-ioc-adapter-express/src/utils/ret-error.ts",
-          "hash": "6900678749990465397"
-        },
-        {
-          "file": "packages/edge-ioc-adapter-express/test/index.spec.ts",
-          "hash": "2966938997360578600"
-        },
-        {
-          "file": "packages/edge-ioc-adapter-express/tsconfig.json",
-          "hash": "6409677777801069326"
+          "file": "packages/common-utils/vue/async-routes.ts",
+          "hash": "1183536396977955148"
         }
       ],
       "@cc-infra/ns-sdk": [
@@ -231,12 +204,16 @@
           "hash": "5080167169210962932"
         },
         {
+          "file": "packages/ns-sdk/CHANGELOG.md",
+          "hash": "9670626269713158019"
+        },
+        {
           "file": "packages/ns-sdk/README.md",
           "hash": "15392878252076670004"
         },
         {
           "file": "packages/ns-sdk/package.json",
-          "hash": "1487615921089322276"
+          "hash": "12222390250605373437"
         },
         {
           "file": "packages/ns-sdk/rollup.config.js",
@@ -278,7 +255,7 @@
         },
         {
           "file": "packages/edge-ioc/README.md",
-          "hash": "11203265215774656197"
+          "hash": "10593124773249185298"
         },
         {
           "file": "packages/edge-ioc/package.json",
@@ -383,6 +360,30 @@
         {
           "file": "packages/edge-ioc/tsconfig.json",
           "hash": "16512440358552516978"
+        }
+      ],
+      "@cc-infra/eslint-config": [
+        {
+          "file": "packages/eslint-config/index.js",
+          "hash": "14252469832839275535"
+        },
+        {
+          "file": "packages/eslint-config/package.json",
+          "hash": "367808518652250091",
+          "deps": [
+            "npm:@typescript-eslint/eslint-plugin",
+            "npm:@typescript-eslint/parser",
+            "npm:eslint-config-airbnb-typescript",
+            "npm:eslint-config-prettier",
+            "npm:eslint-import-resolver-typescript",
+            "npm:eslint-plugin-import",
+            "npm:eslint-plugin-jsx-a11y",
+            "npm:eslint-plugin-prettier",
+            "npm:eslint-plugin-react",
+            "npm:eslint-plugin-react-hooks",
+            "npm:eslint",
+            "npm:eslint-config-airbnb"
+          ]
         }
       ],
       "create-new-project": [
@@ -500,11 +501,11 @@
         },
         {
           "file": "packages/create-new-project/templates/app-edge/src/AppModule.ts",
-          "hash": "18160789004935035280"
+          "hash": "5867740146044819310"
         },
         {
           "file": "packages/create-new-project/templates/app-edge/src/common/PrismaService.ts",
-          "hash": "9470568078012689035"
+          "hash": "10152184013498566445"
         },
         {
           "file": "packages/create-new-project/templates/app-edge/src/common/entity/PaginationReq.ts",
@@ -516,19 +517,19 @@
         },
         {
           "file": "packages/create-new-project/templates/app-edge/src/index.ts",
-          "hash": "10599284893781868224"
+          "hash": "5112308549410696366"
         },
         {
           "file": "packages/create-new-project/templates/app-edge/src/routes/demo/DemoController.ts",
-          "hash": "875302219059218904"
+          "hash": "7749562964316576451"
         },
         {
           "file": "packages/create-new-project/templates/app-edge/src/routes/demo/DemoService.ts",
-          "hash": "17215930833144199012"
+          "hash": "4758654806155515120"
         },
         {
           "file": "packages/create-new-project/templates/app-edge/src/utils/common-response.ts",
-          "hash": "6954355807351927433"
+          "hash": "8391470748891195873"
         },
         {
           "file": "packages/create-new-project/templates/app-edge/src/utils/constants.ts",
@@ -536,11 +537,11 @@
         },
         {
           "file": "packages/create-new-project/templates/app-edge/src/utils/error-response.ts",
-          "hash": "14249802062078693125"
+          "hash": "13980903736480894259"
         },
         {
           "file": "packages/create-new-project/templates/app-edge/src/utils/global-pipeline.ts",
-          "hash": "8115081183012338724"
+          "hash": "703923690868965665"
         },
         {
           "file": "packages/create-new-project/templates/app-edge/src/utils/ret-error.ts",
@@ -596,19 +597,19 @@
         },
         {
           "file": "packages/create-new-project/templates/app-express/src/AppModule.ts",
-          "hash": "15257108248141051321"
+          "hash": "9540588244262080692"
         },
         {
           "file": "packages/create-new-project/templates/app-express/src/index.ts",
-          "hash": "1008353217939763263"
+          "hash": "4255153912944236718"
         },
         {
           "file": "packages/create-new-project/templates/app-express/src/routes/demo/DemoController.ts",
-          "hash": "4410787461801824732"
+          "hash": "17039057245281079421"
         },
         {
           "file": "packages/create-new-project/templates/app-express/src/routes/demo/DemoService.ts",
-          "hash": "18377986410978490343"
+          "hash": "9299689287980481007"
         },
         {
           "file": "packages/create-new-project/templates/app-express/src/routes/demo/entity/ReqEntity.ts",
@@ -616,7 +617,7 @@
         },
         {
           "file": "packages/create-new-project/templates/app-express/src/utils/global-pipeline.ts",
-          "hash": "120230244204710791"
+          "hash": "7345002402550436238"
         },
         {
           "file": "packages/create-new-project/templates/app-express/test/index.spec.ts",
@@ -779,82 +780,79 @@
           "hash": "9215343112100223550"
         }
       ],
-      "@cc-infra/eslint-config": [
+      "@cc-infra/edge-ioc-adapter-express": [
         {
-          "file": "packages/eslint-config/index.js",
-          "hash": "14252469832839275535"
+          "file": "packages/edge-ioc-adapter-express/.eslintrc.cjs",
+          "hash": "5439003769666135121"
         },
         {
-          "file": "packages/eslint-config/package.json",
-          "hash": "367808518652250091",
+          "file": "packages/edge-ioc-adapter-express/.gitignore",
+          "hash": "4524041678099262654"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/.prettierrc",
+          "hash": "5080167169210962932"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/CHANGELOG.md",
+          "hash": "2774004205540011975"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/README.md",
+          "hash": "11321012599919328854"
+        },
+        {
+          "file": "packages/edge-ioc-adapter-express/package.json",
+          "hash": "9949963558506811416",
           "deps": [
-            "npm:@typescript-eslint/eslint-plugin",
-            "npm:@typescript-eslint/parser",
-            "npm:eslint-config-airbnb-typescript",
-            "npm:eslint-config-prettier",
-            "npm:eslint-import-resolver-typescript",
-            "npm:eslint-plugin-import",
-            "npm:eslint-plugin-jsx-a11y",
-            "npm:eslint-plugin-prettier",
-            "npm:eslint-plugin-react",
-            "npm:eslint-plugin-react-hooks",
-            "npm:eslint",
-            "npm:eslint-config-airbnb"
+            "@cc-infra/edge-ioc",
+            "npm:@types/busboy",
+            "npm:busboy"
           ]
-        }
-      ],
-      "common-utils": [
-        {
-          "file": "packages/common-utils/.eslintrc.cjs",
-          "hash": "12517645477645492783"
         },
         {
-          "file": "packages/common-utils/.prettierrc.yaml",
-          "hash": "10420859978821315880"
+          "file": "packages/edge-ioc-adapter-express/rollup.config.js",
+          "hash": "1444419796296867162"
         },
         {
-          "file": "packages/common-utils/CHANGELOG.md",
-          "hash": "568685488183688059"
+          "file": "packages/edge-ioc-adapter-express/src/adapters/formdata.ts",
+          "hash": "13464399768488019086"
         },
         {
-          "file": "packages/common-utils/package.json",
-          "hash": "9454340944927540834"
+          "file": "packages/edge-ioc-adapter-express/src/adapters/headers.ts",
+          "hash": "761761483965249401"
         },
         {
-          "file": "packages/common-utils/styles/reset.scss",
-          "hash": "5278623455366486372"
+          "file": "packages/edge-ioc-adapter-express/src/adapters/middleware.ts",
+          "hash": "4883498779789026846"
         },
         {
-          "file": "packages/common-utils/styles/theme.css",
-          "hash": "1874343280583848816"
+          "file": "packages/edge-ioc-adapter-express/src/edge/index.ts",
+          "hash": "17770858211729647733"
         },
         {
-          "file": "packages/common-utils/styles/utils.scss",
-          "hash": "5694491491169186106"
+          "file": "packages/edge-ioc-adapter-express/src/index.ts",
+          "hash": "15003474594571748755"
         },
         {
-          "file": "packages/common-utils/tools/debounce.ts",
-          "hash": "10682949539100473656"
+          "file": "packages/edge-ioc-adapter-express/src/utils/common-response.ts",
+          "hash": "14759335474815598797"
         },
         {
-          "file": "packages/common-utils/tools/index.ts",
-          "hash": "4680370271519907211"
+          "file": "packages/edge-ioc-adapter-express/src/utils/datetime.ts",
+          "hash": "8942336716150027467"
         },
         {
-          "file": "packages/common-utils/tools/throttle.ts",
-          "hash": "14701570345463504107"
+          "file": "packages/edge-ioc-adapter-express/src/utils/ret-error.ts",
+          "hash": "6900678749990465397"
         },
         {
-          "file": "packages/common-utils/tools/try-catch.ts",
-          "hash": "17769596636223598900"
+          "file": "packages/edge-ioc-adapter-express/test/index.spec.ts",
+          "hash": "2966938997360578600"
         },
         {
-          "file": "packages/common-utils/tsconfig.json",
-          "hash": "4656498884677088923"
-        },
-        {
-          "file": "packages/common-utils/vue/async-routes.ts",
-          "hash": "1183536396977955148"
+          "file": "packages/edge-ioc-adapter-express/tsconfig.json",
+          "hash": "6409677777801069326"
         }
       ]
     }

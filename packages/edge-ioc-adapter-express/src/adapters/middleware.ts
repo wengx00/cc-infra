@@ -1,10 +1,10 @@
-import busboy from 'busboy';
-import chalk from 'chalk';
 import {
   HttpException,
   InternalServerErrorException,
   IRequest,
-} from 'edge-ioc';
+} from '@cc-infra/edge-ioc';
+import busboy from 'busboy';
+import chalk from 'chalk';
 import { RequestHandler } from 'express';
 import EdgeApplication from 'src/edge';
 import formatTime from 'src/utils/datetime';

@@ -1,4 +1,4 @@
-import { Controller, Get } from 'edge-ioc';
+import { Controller, Get } from '@cc-infra/edge-ioc';
 
 import { DemoService } from './DemoService';
 

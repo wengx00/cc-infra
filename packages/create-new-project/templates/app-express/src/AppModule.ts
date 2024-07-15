@@ -1,4 +1,4 @@
-import { Module } from 'edge-ioc';
+import { Module } from '@cc-infra/edge-ioc';
 
 import { DemoController } from './routes/demo/DemoController';
 import { DemoService } from './routes/demo/DemoService';

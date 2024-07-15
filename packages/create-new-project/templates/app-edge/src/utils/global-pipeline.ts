@@ -1,4 +1,4 @@
-import { Constructor } from 'edge-ioc';
+import { Constructor } from '@cc-infra/edge-ioc';
 import { plainToInstance } from 'class-transformer';
 import { ValidationError, validateOrReject } from 'class-validator';
 

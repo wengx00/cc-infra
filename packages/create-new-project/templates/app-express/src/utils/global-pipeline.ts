@@ -1,7 +1,7 @@
+import { Constructor } from '@cc-infra/edge-ioc';
+import { RetError } from '@cc-infra/edge-ioc-adapter-express';
 import { plainToInstance } from 'class-transformer';
 import { ValidationError, validateOrReject } from 'class-validator';
-import { Constructor } from 'edge-ioc';
-import { RetError } from 'edge-ioc-adapter-express';
 
 export default function globalPipeline(
   value: any,

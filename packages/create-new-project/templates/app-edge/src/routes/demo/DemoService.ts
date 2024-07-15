@@ -1,5 +1,5 @@
 import CommonResponse from '@utils/common-response';
-import { Injectable } from 'edge-ioc';
+import { Injectable } from '@cc-infra/edge-ioc';
 
 @Injectable()
 export class DemoService {

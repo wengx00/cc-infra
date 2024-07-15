@@ -74,6 +74,8 @@
   "author": "ccweng",
   "license": "MIT",
   "dependencies": {
+    "@cc-infra/edge-ioc": "workspace:^",
+    "@cc-infra/edge-ioc-adapter-express": "workspace:^",
     "@prisma/client": "^5.16.2",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",

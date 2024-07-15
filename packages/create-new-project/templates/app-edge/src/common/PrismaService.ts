@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { Injectable } from 'edge-ioc';
+import { Injectable } from '@cc-infra/edge-ioc';
 
 @Injectable()
 export class PrismaService {

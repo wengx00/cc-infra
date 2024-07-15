@@ -1,4 +1,4 @@
-import { IFormData } from 'edge-ioc';
+import { IFormData } from '@cc-infra/edge-ioc';
 
 export default class FormData implements IFormData {
   private formData: Map<string, any>;

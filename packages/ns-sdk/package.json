@@ -1,6 +1,6 @@
 {
   "name": "@cc-infra/ns-sdk",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "",
   "type": "module",
   "main": "./dist/index.js",
@@ -21,8 +21,6 @@
   "keywords": [],
   "author": "ccweng",
   "license": "ISC",
-  "devDependencies": {
-  },
-  "dependencies": {
-  }
+  "devDependencies": {},
+  "dependencies": {}
 }

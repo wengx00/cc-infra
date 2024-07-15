@@ -2,7 +2,7 @@ import { PrismaService } from '@common/PrismaService';
 import errorResponse from '@utils/error-response';
 import globalPipeline from '@utils/global-pipeline';
 import { RetError, errcode } from '@utils/ret-error';
-import { HttpException, IocFactory } from 'edge-ioc';
+import { HttpException, IocFactory } from '@cc-infra/edge-ioc';
 
 import { AppModule } from './AppModule';
 

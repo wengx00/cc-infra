@@ -1,4 +1,4 @@
-import { IHeaders } from 'edge-ioc';
+import { IHeaders } from '@cc-infra/edge-ioc';
 
 export default class Headers implements IHeaders {
   private headers: Map<string, string>;

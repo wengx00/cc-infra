@@ -1,4 +1,4 @@
-import { IApplication } from 'edge-ioc';
+import { IApplication } from '@cc-infra/edge-ioc';
 
 export default class EdgeApplication {
   private constructor(public app: IApplication) {}

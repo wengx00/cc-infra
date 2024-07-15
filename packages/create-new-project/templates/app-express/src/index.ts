@@ -1,6 +1,9 @@
+import { IocFactory } from '@cc-infra/edge-ioc';
+import {
+  middleware,
+  EdgeApplication,
+} from '@cc-infra/edge-ioc-adapter-express';
 import chalk from 'chalk';
-import { IocFactory } from 'edge-ioc';
-import { middleware, EdgeApplication } from 'edge-ioc-adapter-express';
 import express from 'express';
 
 import { AppModule } from './AppModule';

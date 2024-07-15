@@ -162,3 +162,4 @@ That's all! The valid HTTP request is `GET /api/auth/user/say_hello`
 3. Run `wrangler dev`
 
 4. 🚀 Open Chrome and just do HTTP request!
+

@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@cc-infra/edge-ioc':
+        specifier: workspace:^
+        version: link:packages/edge-ioc
+      '@cc-infra/edge-ioc-adapter-express':
+        specifier: workspace:^
+        version: link:packages/edge-ioc-adapter-express
       '@prisma/client':
         specifier: ^5.16.2
         version: 5.16.2(prisma@5.16.2)

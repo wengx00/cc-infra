@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Query } from 'edge-ioc';
+import { Body, Controller, Get, Post, Query } from '@cc-infra/edge-ioc';
 
 import { DemoService } from './DemoService';
 import { HelloReq } from './entity/ReqEntity';

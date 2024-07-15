@@ -1,4 +1,4 @@
-import { HttpException } from 'edge-ioc';
+import { HttpException } from '@cc-infra/edge-ioc';
 
 import CommonResponse from './common-response';
 import { RetError } from './ret-error';
