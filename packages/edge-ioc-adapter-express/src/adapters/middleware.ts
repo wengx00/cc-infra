@@ -9,12 +9,14 @@ import { RequestHandler } from 'express';
 import EdgeApplication from 'src/edge';
 import formatTime from 'src/utils/datetime';
 
+import fileParamsHandler from './file-params-handler';
 import FormData from './formdata';
 import Headers from './headers';
 import CommonResponse from '../utils/common-response';
 import { RetError } from '../utils/ret-error';
 
 const middleware: RequestHandler = async (req, res, next) => {
+  const cachedRequest: Partial<Record<keyof IRequest, any>> = {};
   console.log(
     chalk.grey(`[${formatTime()}]`),
     req.method.toUpperCase(),
@@ -28,28 +30,43 @@ const middleware: RequestHandler = async (req, res, next) => {
     headers: new Headers(req.headers),
     formData: () =>
       new Promise<FormData>((resolve, reject) => {
+        if (cachedRequest.formData) {
+          resolve(cachedRequest.formData);
+          return;
+        }
         const records: Record<string, any> = {};
         const bb = busboy({
           headers: req.headers,
         });
         bb.on('finish', () => {
-          resolve(new FormData(records));
+          cachedRequest.formData = new FormData(records);
+          resolve(cachedRequest.formData);
         });
         bb.on('error', reject);
         bb.on('field', (key, value) => {
           records[key] = value;
         });
         bb.on('file', (key, stream, info) => {
-          records[key] = {
-            stream,
-            ...info,
-          };
+          let buffer = Buffer.alloc(0);
+          stream.on('data', (chunk) => {
+            buffer = Buffer.concat([buffer, chunk]);
+          });
+          stream.on('close', () => {
+            records[key] = {
+              buffer,
+              ...info,
+            };
+            buffer = Buffer.alloc(0);
+          });
         });
         req.pipe(bb);
       }),
     method: req.method,
     url: `${req.protocol || 'http'}://${req.hostname || 'localhost'}${req.url}`,
     arrayBuffer() {
+      if (cachedRequest.arrayBuffer) {
+        return Promise.resolve(cachedRequest.arrayBuffer);
+      }
       return new Promise((resolve, reject) => {
         let buffer = Buffer.alloc(0);
 
@@ -60,12 +77,11 @@ const middleware: RequestHandler = async (req, res, next) => {
 
         // 请求结束时，将 buffer 转换为 ArrayBuffer
         req.on('end', () => {
-          resolve(
-            buffer.buffer.slice(
-              buffer.byteOffset,
-              buffer.byteOffset + buffer.length,
-            ),
+          cachedRequest.arrayBuffer = buffer.buffer.slice(
+            buffer.byteOffset,
+            buffer.byteOffset + buffer.length,
           );
+          resolve(cachedRequest.arrayBuffer);
           buffer = Buffer.alloc(0);
         });
 
@@ -76,22 +92,35 @@ const middleware: RequestHandler = async (req, res, next) => {
       });
     },
     async blob() {
+      if (cachedRequest.blob) {
+        return cachedRequest.blob;
+      }
       const res = await this.arrayBuffer();
-      return new Blob([res], {
+      cachedRequest.blob = new Blob([res], {
         type: req.headers['content-type'],
       });
+      return cachedRequest.blob;
     },
     async text() {
+      if (cachedRequest.text) {
+        return cachedRequest.text;
+      }
       const res = await this.arrayBuffer();
-      return new TextDecoder().decode(res);
+      cachedRequest.text = new TextDecoder().decode(res);
+      return cachedRequest.text;
     },
     async json() {
+      if (cachedRequest.json) {
+        return cachedRequest.json;
+      }
       const text = await this.text();
-      return JSON.parse(text);
+      cachedRequest.json = JSON.parse(text);
+      return cachedRequest.json;
     },
   };
 
   const { app } = iocApp;
+  app.addParamsHandler(fileParamsHandler);
   try {
     const result = await app.handleHttpRequest(request);
     if (result instanceof CommonResponse) {

@@ -12,7 +12,8 @@ export default function globalPipeline(
       !constructor ||
       constructor === Number ||
       constructor === String ||
-      constructor === Boolean
+      constructor === Boolean ||
+      Reflect.getMetadata('skipPipeline', constructor)
     ) {
       resolve(value);
       return;

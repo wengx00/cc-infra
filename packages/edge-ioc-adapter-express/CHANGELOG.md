@@ -1,5 +1,11 @@
 # edge-ioc-adapter-express
 
+## 1.0.2
+
+### Patch Changes
+
+- 修复文件formdata异常问题，新增File装饰器
+
 ## 1.0.1
 
 ### Patch Changes

@@ -7,7 +7,7 @@ import chalk from 'chalk';
 import express from 'express';
 
 import { AppModule } from './AppModule';
-import globalPipeline from './utils/global-pipeline';
+import globalPipeline from './utils/GlobalPipeline';
 
 const server = express();
 const port = 80;

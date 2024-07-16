@@ -1,6 +1,5 @@
 import Body from './body';
 import Controller from './controller';
-import File from './file';
 import Get from './get';
 import Injectable from './injectable';
 import metaType from './meta-type';
@@ -19,9 +18,8 @@ export {
   Param,
   Query,
   Body,
-  File,
   Module,
   metaType,
   type ModuleOptions,
 };
-export * from './utils';
+export { type ParameterInfo } from './utils';

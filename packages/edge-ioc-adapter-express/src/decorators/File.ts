@@ -1,12 +1,10 @@
-import Param from './param';
-
-import { Pipeline } from '@/utils';
+import { Param, Pipeline } from '@cc-infra/edge-ioc';
 
 export default function File(
-  id?: string,
+  id: string,
   options?: {
     pipelines?: Pipeline[];
   },
-): ParameterDecorator {
+) {
   return Param('file', id, options);
 }

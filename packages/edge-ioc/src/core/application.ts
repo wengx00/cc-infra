@@ -7,11 +7,11 @@ export interface IHeaders {
 }
 
 export interface IFormData {
-  get(name: string): string | null | undefined;
-  set(name: string, value: string): void;
+  get<T = any>(name: string): T | undefined;
+  set<T = any>(name: string, value: T): void;
   has(name: string): boolean;
   delete(name: string): void;
-  entries(): IterableIterator<[string, string]>;
+  entries(): IterableIterator<[string, any]>;
 }
 
 export interface IRequest {

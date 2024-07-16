@@ -253,7 +253,9 @@ export default class IocFactory implements IApplication {
           constructor,
         });
         if (result !== null) {
-          paramsInjectData.push(result);
+          for (const pipeline of pipelines) {
+            paramsInjectData.push(await pipeline(result, constructor));
+          }
           break;
         }
       }

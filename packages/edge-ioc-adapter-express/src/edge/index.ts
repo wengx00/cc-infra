@@ -1,18 +1,18 @@
-import { IApplication } from '@cc-infra/edge-ioc';
+import { IocFactory } from '@cc-infra/edge-ioc';
 
 export default class EdgeApplication {
-  private constructor(public app: IApplication) {}
+  private constructor(public app: IocFactory) {}
 
   private static instance: EdgeApplication;
 
-  static getInstance(app?: IApplication) {
+  static getInstance(app?: IocFactory) {
     if (!EdgeApplication.instance && app) {
       EdgeApplication.instance = new EdgeApplication(app);
     }
     return EdgeApplication.instance || null;
   }
 
-  static setInstance(app: IApplication) {
+  static setInstance(app: IocFactory) {
     EdgeApplication.instance = new EdgeApplication(app);
   }
 }

@@ -4,6 +4,7 @@ import IocFactory, {
   type IHandler,
   type IRoutes,
   type IocRequest,
+  type IParamsHandler,
 } from './factory';
 
 export {
@@ -16,4 +17,5 @@ export {
   type IHandler,
   type IRoutes,
   type IocRequest,
+  type IParamsHandler,
 };
