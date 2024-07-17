@@ -18,7 +18,7 @@ export default {
       sourcemap: true,
     },
   ],
-  external: ['edge-ioc'],
+  external: ['@cc-infra/edge-ioc'],
   plugins: [
     resolve(),
     json(),
