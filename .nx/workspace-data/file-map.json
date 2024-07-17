@@ -60,20 +60,72 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".husky/pre-commit",
-        "hash": "13469207043343598078"
+        "file": ".eslintignore",
+        "hash": "5295927524835915940"
       },
       {
-        "file": "lerna.json",
-        "hash": "10010256335013790573"
+        "file": ".eslintrc.cjs",
+        "hash": "13713184736274611293"
+      },
+      {
+        "file": ".github/workflows/packages__edge-ioc.yml",
+        "hash": "5520728579842437307"
+      },
+      {
+        "file": "pnpm-workspace.yaml",
+        "hash": "14639521381876074089"
+      },
+      {
+        "file": "commitlint.config.js",
+        "hash": "12381178570804986944"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "14166975966484008891"
+      },
+      {
+        "file": ".github/workflows/packages__ns-sdk.yml",
+        "hash": "9404459012008956126"
       },
       {
         "file": "nx.json",
         "hash": "16327866290396834523"
       },
       {
-        "file": "pnpm-workspace.yaml",
-        "hash": "14639521381876074089"
+        "file": "lerna.json",
+        "hash": "10010256335013790573"
+      },
+      {
+        "file": ".husky/commit-msg",
+        "hash": "1407302808277523102"
+      },
+      {
+        "file": "package.json",
+        "hash": "16638209382349166492"
+      },
+      {
+        "file": "README.md",
+        "hash": "1615369584530561218"
+      },
+      {
+        "file": ".gitattributes",
+        "hash": "4783473927334323378"
+      },
+      {
+        "file": ".changeset/README.md",
+        "hash": "4888845876018830777"
+      },
+      {
+        "file": ".husky/pre-commit",
+        "hash": "13469207043343598078"
+      },
+      {
+        "file": ".github/workflows/packages__edge-ioc-adapter-express.yml",
+        "hash": "11760396097659337765"
+      },
+      {
+        "file": ".github/workflows/app__sso-server.yml",
+        "hash": "8669003774172809370"
       },
       {
         "file": ".gitignore",
@@ -86,58 +138,6 @@
       {
         "file": ".changeset/config.json",
         "hash": "5554182433925840759"
-      },
-      {
-        "file": ".gitattributes",
-        "hash": "4783473927334323378"
-      },
-      {
-        "file": ".github/workflows/app__sso-server.yml",
-        "hash": "8669003774172809370"
-      },
-      {
-        "file": "package.json",
-        "hash": "16638209382349166492"
-      },
-      {
-        "file": ".husky/commit-msg",
-        "hash": "1407302808277523102"
-      },
-      {
-        "file": ".eslintignore",
-        "hash": "5295927524835915940"
-      },
-      {
-        "file": ".changeset/README.md",
-        "hash": "4888845876018830777"
-      },
-      {
-        "file": "pnpm-lock.yaml",
-        "hash": "14166975966484008891"
-      },
-      {
-        "file": "commitlint.config.js",
-        "hash": "12381178570804986944"
-      },
-      {
-        "file": ".github/workflows/packages__edge-ioc-adapter-express.yml",
-        "hash": "11760396097659337765"
-      },
-      {
-        "file": ".github/workflows/packages__edge-ioc.yml",
-        "hash": "5520728579842437307"
-      },
-      {
-        "file": "README.md",
-        "hash": "1615369584530561218"
-      },
-      {
-        "file": ".github/workflows/packages__ns-sdk.yml",
-        "hash": "9404459012008956126"
-      },
-      {
-        "file": ".eslintrc.cjs",
-        "hash": "13713184736274611293"
       }
     ],
     "projectFileMap": {
@@ -418,6 +418,10 @@
         {
           "file": "packages/ns-sdk/src/tools/rsa.ts",
           "hash": "17013915906061281668"
+        },
+        {
+          "file": "packages/ns-sdk/.npmrc",
+          "hash": "17732982955728448008"
         }
       ],
       "common-utils": [
