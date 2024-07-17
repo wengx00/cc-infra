@@ -1,5 +1,12 @@
 # @cc-infra/ns-sdk
 
+## 1.0.2
+
+### Patch Changes
+
+- 新增MD5加解密
+- 新增RSA加解密
+
 ## 1.0.1
 
 ### Patch Changes
