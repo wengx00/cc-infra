@@ -16,11 +16,13 @@ function generateKeyPair(modulusLength = 1024) {
 }
 
 function publicEncrypt(data: string, publicKey: string) {
-  return crypto.publicEncrypt(publicKey, Buffer.from(data)).toString();
+  return crypto.publicEncrypt(publicKey, Buffer.from(data)).toString('base64');
 }
 
 function privateDecrypt(encryptData: string, privateKey: string) {
-  return crypto.privateDecrypt(privateKey, Buffer.from(encryptData)).toString();
+  return crypto
+    .privateDecrypt(privateKey, Buffer.from(encryptData, 'base64'))
+    .toString();
 }
 
 export default { generateKeyPair, publicEncrypt, privateDecrypt };

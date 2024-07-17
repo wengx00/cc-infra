@@ -1,6 +1,6 @@
 import { resolve } from 'path';
 
-import { md5, tarball } from 'src';
+import { md5, rsa, tarball } from 'src';
 import { expect, test } from 'vitest';
 
 test('解压工具', async () => {
@@ -14,4 +14,16 @@ test('解压工具', async () => {
 
 test('MD5', () => {
   expect(md5('hello')).toBe('5d41402abc4b2a76b9719d911017c592');
+});
+
+test('RSA', () => {
+  const { privateKey, publicKey } = rsa.generateKeyPair();
+  expect(privateKey).toBeDefined();
+  expect(publicKey).toBeDefined();
+  const originData = 'Hello World';
+  const encryptData = rsa.publicEncrypt(originData, publicKey);
+  console.log('encryptData', encryptData);
+  const decryptData = rsa.privateDecrypt(encryptData, privateKey);
+  console.log('decryptData', decryptData);
+  expect(decryptData).toBe(originData);
 });
