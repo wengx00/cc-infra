@@ -1,0 +1,23 @@
+model ResourceType {
+  id Int @id @default(autoincrement())
+  deleted Boolean @default(false)
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+
+  name String
+}
+
+model Resource {
+  id String @id @default(uuid())
+  deleted Boolean @default(false)
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+
+  name String
+  teamId String
+  resourceType Int
+  
+  // 同一team下的resource不重名
+  @@unique([teamId, name])
+  team Team @relation(references: [teamId], fields: [teamId])
+}

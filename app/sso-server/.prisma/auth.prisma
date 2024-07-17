@@ -1,0 +1,54 @@
+model User {
+  id Int @id @default(autoincrement())
+  deleted Boolean @default(false)
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+  uid String @unique
+  account String @unique
+  teamId String
+  name String
+  password String?
+
+  team Team @relation(references: [teamId], fields: [teamId])
+  userToRole UserToRole[]
+}
+
+model Team {
+  id Int @id @default(autoincrement())
+  teamId String @unique
+  name String @unique
+  deleted Boolean @default(false)
+
+  user User[]
+  role Role[]
+  resource Resource[]
+}
+
+model Role {
+  id Int @id @default(autoincrement())
+  deleted Boolean @default(false)
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+
+  roleId String @unique
+  teamId String
+  name String
+
+  userToRole UserToRole[]
+  team Team @relation(references: [teamId], fields: [teamId])
+}
+
+model UserToRole {
+  id Int @id @default(autoincrement())
+  deleted Boolean @default(false)
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+
+  uid String
+  roleId String
+  // 同一用户的roleId互不相同
+  @@unique([uid, roleId])
+
+  user User @relation(references: [uid], fields: [uid])
+  role Role @relation(references: [roleId], fields: [roleId])
+}

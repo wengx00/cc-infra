@@ -1,6 +1,6 @@
 import { resolve } from 'path';
 
-import { tarball } from 'src';
+import { md5, tarball } from 'src';
 import { expect, test } from 'vitest';
 
 test('解压工具', async () => {
@@ -10,4 +10,8 @@ test('解压工具', async () => {
   const dest = await tarball.unpack(input, output);
 
   expect(dest).toBe(output);
+});
+
+test('MD5', () => {
+  expect(md5('hello')).toBe('5d41402abc4b2a76b9719d911017c592');
 });

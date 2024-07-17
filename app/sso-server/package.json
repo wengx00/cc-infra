@@ -1,0 +1,30 @@
+{
+  "name": "sso-server",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "deploy": "pnpm run build && wrangler deploy",
+    "build": "pnpm run typegen:prisma && rollup --config rollup.config.js",
+    "dev": "wrangler dev",
+    "watch": "pnpm run typegen:prisma && rollup --config rollup.config.js --watch ",
+    "start": "pnpm run build && wrangler dev",
+    "test": "vitest",
+    "lint": "eslint --ext ts --fix --color --cache --quiet .",
+    "typegen": "pnpm run typegen:wrangler && pnpm run typegen:prisma",
+    "typegen:wrangler": "wrangler types",
+    "typegen:prisma": "prisma generate --schema=./.prisma",
+    "db:push-local": "wrangler d1 migrations apply prod_sso --local",
+    "db:push-remote": "wrangler d1 migrations apply prod_sso --remote",
+    "db:migrate": "wrangler d1 migrations create prod_sso create_prod_sso"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.4.11",
+    "@cloudflare/workers-types": "^4.20240701.0",
+    "wrangler": "^3.64.0"
+  },
+  "dependencies": {
+    "@prisma/adapter-d1": "^5.15.0",
+    "@cc-infra/edge-ioc": "workspace:^"
+  }
+}
