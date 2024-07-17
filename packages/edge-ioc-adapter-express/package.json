@@ -17,7 +17,7 @@
     "start": "pnpm build && node ./dist/index.cjs",
     "test": "vitest run",
     "lint": "eslint --ext ts --fix --color --cache --quiet .",
-    "dopublish": "npx lerna run build --scope @cc-infra/edge-ioc-adapter-express && pnpm publish --no-git-checks --access public --registry=https://registry.npmjs.org/"
+    "dopublish": "pnpm publish --no-git-checks --access public --registry=https://registry.npmjs.org/"
   },
   "keywords": [],
   "author": "ccweng",

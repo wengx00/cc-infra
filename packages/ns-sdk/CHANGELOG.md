@@ -1,5 +1,11 @@
 # @cc-infra/ns-sdk
 
+## 1.0.1
+
+### Patch Changes
+
+- 新增tarball解压
+
 ## 1.0.0
 
 ### Major Changes

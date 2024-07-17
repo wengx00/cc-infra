@@ -39,6 +39,8 @@ jobs:
         run: "npx lerna run test --scope @cc-infra/ns-sdk"
       - name: 构建检查
         run: "npx lerna run build --scope @cc-infra/ns-sdk"
-      # TODO: 制品推送
+      - name: 制品发布
+        run: "npx lerna run dopublish --scope @cc-infra/ns-sdk"
+        continue-on-error: true
       
 

@@ -25,7 +25,7 @@
   "scripts": {
     "build": "rollup --config rollup.config.js",
     "lint": "eslint --ext ts --fix --color --cache --quiet .",
-    "dopublish": "npx lerna run build --scope @cc-infra/edge-ioc && pnpm publish --no-git-checks --access public --registry=https://registry.npmjs.org/"
+    "dopublish": "pnpm publish --no-git-checks --access public --registry=https://registry.npmjs.org/"
   },
   "devDependencies": {},
   "dependencies": {}

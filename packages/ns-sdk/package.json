@@ -1,6 +1,6 @@
 {
   "name": "@cc-infra/ns-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "type": "module",
   "main": "./dist/index.js",
@@ -16,11 +16,16 @@
     "build": "rollup --config rollup.config.js",
     "start": "pnpm build && node ./dist/index.cjs",
     "test": "vitest run",
-    "lint": "eslint --ext ts --fix --color --cache --quiet ."
+    "lint": "eslint --ext ts --fix --color --cache --quiet .",
+    "dopublish": "pnpm publish --registry=https://registry.npmjs.org/ --no-git-checks --access public"
   },
   "keywords": [],
   "author": "ccweng",
   "license": "ISC",
-  "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {
+    "tar-fs": "^3.0.6"
+  },
+  "devDependencies": {
+    "@types/tar-fs": "^2.0.4"
+  }
 }
