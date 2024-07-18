@@ -42,7 +42,7 @@ jobs:
       - name: 制品发布
         run: "npx lerna run dopublish --scope @cc-infra/edge-ioc-adapter-express"
         env:
-          NODE_Authorization: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         continue-on-error: true
       
 
