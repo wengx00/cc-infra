@@ -39,6 +39,8 @@ jobs:
         run: "npx lerna run build --scope @cc-infra/edge-ioc"
       - name: 制品发布
         run: "npx lerna run dopublish --scope @cc-infra/edge-ioc"
+        env:
+          NODE_Authorization: ${{ secrets.NPM_TOKEN }}
         continue-on-error: true
       
 
