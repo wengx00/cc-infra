@@ -1,5 +1,11 @@
 # edge-ioc-adapter-express
 
+## 1.0.4
+
+### Patch Changes
+
+- express request透传
+
 ## 1.0.3
 
 ### Patch Changes

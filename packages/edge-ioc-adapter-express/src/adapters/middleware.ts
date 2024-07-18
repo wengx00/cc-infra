@@ -27,6 +27,7 @@ const middleware: RequestHandler = async (req, res, next) => {
     throw new Error('Fail to load IocApplication: app does not initialized.');
   }
   const request: IRequest = {
+    ...req,
     headers: new Headers(req.headers),
     formData: () =>
       new Promise<FormData>((resolve, reject) => {

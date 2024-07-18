@@ -13,3 +13,13 @@ test('NS 签名', () => {
   console.log('生成 signature: ', signature);
   expect(nsVerify({ signature, secret, appid, timestamp })).toBe(true);
 });
+
+test('指定 NS 签名', () => {
+  const secret = '!scnu-dev0000';
+  const appid = '100000';
+  const timestamp = +new Date();
+  const signature = nsSign({ secret, appid, timestamp });
+  console.log('时间戳', timestamp);
+  console.log('指定 signature: ', signature);
+  expect(nsVerify({ signature, secret, appid, timestamp })).toBe(true);
+});

@@ -38,7 +38,7 @@ jobs:
       - name: 构建检查
         run: "npx lerna run build --scope @cc-infra/edge-ioc"
       - name: 制品发布
-        run: "npx lerna run dopublish --scope @cc-infra/ns-sdk"
+        run: "npx lerna run dopublish --scope @cc-infra/edge-ioc"
         continue-on-error: true
       
 
