@@ -31,7 +31,7 @@ export function invoke<T = any>(action: string, data: Record<string, any>) {
     .then((res) => {
       const { Response } = res.data;
       if (Response.Error) {
-        throw new Error(Response.Error.Message);
+        throw Response.Error;
       }
       return (Response.Data || Response) as T;
     });

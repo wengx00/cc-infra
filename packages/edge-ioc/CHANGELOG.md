@@ -1,5 +1,11 @@
 # edge-ioc
 
+## 1.0.3
+
+### Patch Changes
+
+- 184216f: 修复空包体时Body为undefined的问题
+
 ## 1.0.2
 
 ### Patch Changes
