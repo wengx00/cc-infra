@@ -15,8 +15,8 @@ test('NS 签名', () => {
 });
 
 test('指定 NS 签名', () => {
-  const secret = '!scnu-dev0000';
-  const appid = '100000';
+  const secret = '!scnu-title-audit';
+  const appid = '10000';
   const timestamp = +new Date();
   const signature = nsSign({ secret, appid, timestamp });
   console.log('时间戳', timestamp);

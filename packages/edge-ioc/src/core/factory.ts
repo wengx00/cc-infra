@@ -224,8 +224,7 @@ export default class IocFactory implements IApplication {
           }
           paramsInjectData.push(targetValue);
           continue;
-        }
-        if (
+        } else if (
           request.headers.get('content-type')?.includes('multipart/form-data')
         ) {
           // form-data包体
@@ -240,7 +239,16 @@ export default class IocFactory implements IApplication {
           }
           paramsInjectData.push(targetValue);
           continue;
+        } else if (id) {
+          targetValue = undefined;
+        } else {
+          targetValue = {};
         }
+        for (const pipeline of pipelines) {
+          targetValue = await pipeline(targetValue, constructor);
+        }
+        paramsInjectData.push(targetValue);
+        continue;
       }
       for (let i = 0; i < paramsHandler.length; i += 1) {
         const handler = paramsHandler[i];
