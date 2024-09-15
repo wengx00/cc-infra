@@ -1,5 +1,11 @@
 # @cc-infra/edge-ioc-swagger
 
+## 0.1.3
+
+### Patch Changes
+
+- 修复paths对象生成时undefined的问题
+
 ## 0.1.2
 
 ### Patch Changes

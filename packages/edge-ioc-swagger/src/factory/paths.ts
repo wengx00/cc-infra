@@ -26,31 +26,31 @@ export function generatePaths(includes: IncludeInfo[]) {
             tags,
             deprecated,
           };
-          if (!primitive[query?.name.toLowerCase() || '']) {
+          if (query && !primitive[query.name.toLowerCase() || '']) {
             pathItem[method.toLowerCase()].parameters = {
-              $ref: `#/components/schemas/${query?.name}`,
+              $ref: `#/components/schemas/${query.name}`,
             };
           }
-          if (!primitive[body?.name.toLowerCase() || '']) {
+          if (body && !primitive[body.name.toLowerCase() || '']) {
             pathItem[method.toLowerCase()].requestBody = {
               content: {
                 'application/json': {
                   schema: {
-                    $ref: `#/components/schemas/${body?.name}`,
+                    $ref: `#/components/schemas/${body.name}`,
                   },
                 },
               },
             };
           }
 
-          if (!primitive[result?.name.toLowerCase() || '']) {
+          if (result && !primitive[result.name.toLowerCase() || '']) {
             pathItem[method.toLowerCase()].responses = {
               '200': {
                 description: '',
                 content: {
                   'application/json': {
                     schema: {
-                      $ref: `#/components/schemas/${result?.name}`,
+                      $ref: `#/components/schemas/${result.name}`,
                     },
                   },
                 },
