@@ -1,5 +1,11 @@
 # @cc-infra/edge-ioc-swagger
 
+## 0.1.6
+
+### Patch Changes
+
+- 支持全局result插槽
+
 ## 0.1.5
 
 ### Patch Changes

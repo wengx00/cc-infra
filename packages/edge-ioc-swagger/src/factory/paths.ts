@@ -1,9 +1,14 @@
 import primitive from 'src/utils/primitive';
+import { SwaggerFactoryOptions } from 'src/utils/types';
 
 import { IncludeInfo } from './includes';
 import { generateParams } from './params';
 
-export function generatePaths(includes: IncludeInfo[]) {
+export function generatePaths(
+  includes: IncludeInfo[],
+  options?: SwaggerFactoryOptions,
+) {
+  const { commonResult } = options || {};
   const paths: Record<string, any> = {};
   includes.forEach(({ path: base, handlers }) => {
     handlers.forEach(
@@ -42,19 +47,36 @@ export function generatePaths(includes: IncludeInfo[]) {
             };
           }
 
+          const content: Record<string, any> = {
+            'application/json': {},
+          };
+
+          if (result && !primitive[result.name.toLowerCase()]) {
+            if (commonResult) {
+              const { dataKey, schema } = commonResult;
+              const resSchema = {
+                ...schema,
+                [dataKey]: {
+                  ...schema[dataKey],
+                  $ref: `#/components/schemas/${result.name}`,
+                },
+              };
+              content['application/json'] = {
+                schema: resSchema,
+              };
+            } else {
+              content['application/json'] = {
+                schema: {
+                  $ref: `#/components/schemas/${result.name}`,
+                },
+              };
+            }
+          }
+
           pathItem[method.toLowerCase()].responses = {
             '200': {
               description: '',
-              content: {
-                'application/json':
-                  result && !primitive[result.name.toLowerCase()]
-                    ? {
-                        schema: {
-                          $ref: `#/components/schemas/${result.name}`,
-                        },
-                      }
-                    : {},
-              },
+              content,
             },
           };
         });
