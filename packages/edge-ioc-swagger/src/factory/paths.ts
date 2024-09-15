@@ -1,6 +1,7 @@
 import primitive from 'src/utils/primitive';
 
 import { IncludeInfo } from './includes';
+import { generateParams } from './params';
 
 export function generatePaths(includes: IncludeInfo[]) {
   const paths: Record<string, any> = {};
@@ -27,9 +28,7 @@ export function generatePaths(includes: IncludeInfo[]) {
             deprecated,
           };
           if (query && !primitive[query.name.toLowerCase() || '']) {
-            pathItem[method.toLowerCase()].parameters = {
-              $ref: `#/components/schemas/${query.name}`,
-            };
+            pathItem[method.toLowerCase()].parameters = generateParams(query);
           }
           if (body && !primitive[body.name.toLowerCase() || '']) {
             pathItem[method.toLowerCase()].requestBody = {
@@ -43,20 +42,21 @@ export function generatePaths(includes: IncludeInfo[]) {
             };
           }
 
-          if (result && !primitive[result.name.toLowerCase() || '']) {
-            pathItem[method.toLowerCase()].responses = {
-              '200': {
-                description: '',
-                content: {
-                  'application/json': {
-                    schema: {
-                      $ref: `#/components/schemas/${result.name}`,
-                    },
-                  },
-                },
+          pathItem[method.toLowerCase()].responses = {
+            '200': {
+              description: '',
+              content: {
+                'application/json':
+                  result && !primitive[result.name.toLowerCase()]
+                    ? {
+                        schema: {
+                          $ref: `#/components/schemas/${result.name}`,
+                        },
+                      }
+                    : {},
               },
-            };
-          }
+            },
+          };
         });
 
         paths[fullPath] = pathItem;

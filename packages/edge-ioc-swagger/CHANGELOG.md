@@ -1,5 +1,11 @@
 # @cc-infra/edge-ioc-swagger
 
+## 0.1.4
+
+### Patch Changes
+
+- 修复parameter生成错误的问题
+
 ## 0.1.3
 
 ### Patch Changes
