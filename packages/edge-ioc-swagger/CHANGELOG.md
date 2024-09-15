@@ -1,5 +1,11 @@
 # @cc-infra/edge-ioc-swagger
 
+## 0.1.5
+
+### Patch Changes
+
+- 修复实体无required参数时异常的问题
+
 ## 0.1.4
 
 ### Patch Changes

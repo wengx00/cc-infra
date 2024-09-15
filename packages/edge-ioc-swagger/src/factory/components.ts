@@ -19,10 +19,9 @@ export function generateComponents(includes: IncludeInfo[]) {
       return;
     }
 
-    const result = {
+    const result: Record<string, any> = {
       type: 'object',
       title: target.name,
-      required: [] as string[],
     };
 
     const propertiesMetadata =
@@ -38,6 +37,9 @@ export function generateComponents(includes: IncludeInfo[]) {
       };
 
       if (required) {
+        if (!result.required) {
+          result.required = [];
+        }
         result.required.push(propertyKey);
       }
 
