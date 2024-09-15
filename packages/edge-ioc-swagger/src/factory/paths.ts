@@ -55,7 +55,7 @@ export function generatePaths(
             content['application/json'] = {
               schema: getResponseSchema(
                 result && !primitive[result.name.toLowerCase()]
-                  ? result.name
+                  ? `#/components/schemas/${result.name}`
                   : undefined,
               ),
             };

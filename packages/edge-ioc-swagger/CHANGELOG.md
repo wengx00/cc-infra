@@ -1,5 +1,11 @@
 # @cc-infra/edge-ioc-swagger
 
+## 0.1.9
+
+### Patch Changes
+
+- 修复实体ref不存在的问题
+
 ## 0.1.8
 
 ### Patch Changes
