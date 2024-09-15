@@ -65,14 +65,13 @@ export function generatePaths(
                 $ref: `#/components/schemas/${result.name}`,
               },
             };
-          } else {
-            pathItem[method.toLowerCase()].responses = {
-              '200': {
-                description: '',
-                content,
-              },
-            };
           }
+          pathItem[method.toLowerCase()].responses = {
+            '200': {
+              description: '',
+              content,
+            },
+          };
         });
 
         paths[fullPath] = pathItem;

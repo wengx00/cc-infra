@@ -1,5 +1,11 @@
 # @cc-infra/edge-ioc-swagger
 
+## 0.1.8
+
+### Patch Changes
+
+- 修复response生成错误的问题
+
 ## 0.1.7
 
 ### Patch Changes
