@@ -1,3 +1,5 @@
 project,target,configuration,hash,code,status,start,end
 @cc-infra/edge-ioc,build,,609886223082109250,0,success,1726211951343,1726211953619
 @cc-infra/edge-ioc,build,,16186238298949592303,0,success,1726282306512,1726282308117
+@cc-infra/edge-ioc,build,,10599558358547729700,0,success,1726375490584,1726375492437
+@cc-infra/edge-ioc-swagger,build,,4876263064420220339,0,success,1726375492438,1726375493931
