@@ -1,6 +1,3 @@
 export interface SwaggerFactoryOptions {
-  commonResult?: {
-    schema: Record<string, Record<string, string>>;
-    dataKey: string;
-  };
+  getResponseSchema?: ($ref?: string) => string;
 }

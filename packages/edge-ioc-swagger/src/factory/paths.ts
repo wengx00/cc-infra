@@ -8,7 +8,7 @@ export function generatePaths(
   includes: IncludeInfo[],
   options?: SwaggerFactoryOptions,
 ) {
-  const { commonResult } = options || {};
+  const { getResponseSchema } = options || {};
   const paths: Record<string, any> = {};
   includes.forEach(({ path: base, handlers }) => {
     handlers.forEach(
@@ -51,34 +51,28 @@ export function generatePaths(
             'application/json': {},
           };
 
-          if (result && !primitive[result.name.toLowerCase()]) {
-            if (commonResult) {
-              const { dataKey, schema } = commonResult;
-              const resSchema = {
-                ...schema,
-                [dataKey]: {
-                  ...schema[dataKey],
-                  $ref: `#/components/schemas/${result.name}`,
-                },
-              };
-              content['application/json'] = {
-                schema: resSchema,
-              };
-            } else {
-              content['application/json'] = {
-                schema: {
-                  $ref: `#/components/schemas/${result.name}`,
-                },
-              };
-            }
+          if (getResponseSchema) {
+            content['application/json'] = {
+              schema: getResponseSchema(
+                result && !primitive[result.name.toLowerCase()]
+                  ? result.name
+                  : undefined,
+              ),
+            };
+          } else if (result && !primitive[result.name.toLowerCase()]) {
+            content['application/json'] = {
+              schema: {
+                $ref: `#/components/schemas/${result.name}`,
+              },
+            };
+          } else {
+            pathItem[method.toLowerCase()].responses = {
+              '200': {
+                description: '',
+                content,
+              },
+            };
           }
-
-          pathItem[method.toLowerCase()].responses = {
-            '200': {
-              description: '',
-              content,
-            },
-          };
         });
 
         paths[fullPath] = pathItem;

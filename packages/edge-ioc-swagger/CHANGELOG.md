@@ -1,5 +1,11 @@
 # @cc-infra/edge-ioc-swagger
 
+## 0.1.7
+
+### Patch Changes
+
+- 修复schema问题
+
 ## 0.1.6
 
 ### Patch Changes
