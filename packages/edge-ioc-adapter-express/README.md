@@ -79,3 +79,4 @@ Controller 和 Service 编写方法详见 `packages/edge-ioc` 的 README。
 ## 使用脚手架
 
 使用大仓中的 `bootstrap` 脚手架，选择 `app` -> `Ioc Express App` 即可创建一个带有初始模版（包含初始 Module、Controller、Service、Pipeline）的 IoC Express 项目。
+
