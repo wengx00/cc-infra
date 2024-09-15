@@ -48,7 +48,8 @@ export function createMethodDecorator(
   conflictHandler?: (newValue: any, oldValue: any) => any,
 ): MethodDecorator {
   return (target, propertyKey, descriptor) => {
-    const methods = Reflect.getMetadata(constants.methods, target) || [];
+    const methods =
+      Reflect.getMetadata(constants.methods, target.constructor) || [];
     if (!methods.find((method: any) => method.propertyKey === propertyKey)) {
       Reflect.defineMetadata(
         constants.methods,

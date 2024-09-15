@@ -1,5 +1,11 @@
 # @cc-infra/edge-ioc-swagger
 
+## 0.1.2
+
+### Patch Changes
+
+- 修复装饰器对象错误的问题
+
 ## 0.1.1
 
 ### Patch Changes
