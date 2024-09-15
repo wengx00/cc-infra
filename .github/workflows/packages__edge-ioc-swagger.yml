@@ -34,9 +34,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: ESLint 检查
-        run: "npx lerna run lint --scope edge-ioc-swagger"
+        run: "npx lerna run lint --scope @cc-infra/edge-ioc-swagger"
       - name: 构建检查
-        run: "npx lerna run build --scope edge-ioc-swagger"
+        run: "npx lerna run build --scope @cc-infra/edge-ioc-swagger"
       - name: 制品发布
         run: "npx lerna run dopublish --scope @cc-infra/edge-ioc-swagger"
         env:
