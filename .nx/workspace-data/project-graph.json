@@ -185,6 +185,97 @@
         "implicitDependencies": []
       }
     },
+    "@cc-infra/edge-ioc-swagger": {
+      "name": "@cc-infra/edge-ioc-swagger",
+      "type": "lib",
+      "data": {
+        "root": "packages/edge-ioc-swagger",
+        "targets": {
+          "build": {
+            "executor": "nx:run-script",
+            "metadata": {
+              "scriptContent": "rollup --config rollup.config.js",
+              "runCommand": "pnpm run build"
+            },
+            "cache": true,
+            "dependsOn": [
+              "^build"
+            ],
+            "outputs": [
+              "{projectRoot}/dist"
+            ],
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "metadata": {
+              "scriptContent": "eslint --ext ts --fix --color --cache --quiet .",
+              "runCommand": "pnpm run lint"
+            },
+            "cache": true,
+            "dependsOn": [],
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "dopublish": {
+            "executor": "nx:run-script",
+            "metadata": {
+              "scriptContent": "pnpm publish --no-git-checks --access public --registry=https://registry.npmjs.org/",
+              "runCommand": "pnpm run dopublish"
+            },
+            "dependsOn": [],
+            "options": {
+              "script": "dopublish"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "metadata": {
+              "scriptContent": "pnpm build && node --inspect-brk ./dist/index.cjs",
+              "runCommand": "pnpm run start"
+            },
+            "dependsOn": [
+              "^build"
+            ],
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/edge-ioc-swagger",
+        "name": "@cc-infra/edge-ioc-swagger",
+        "tags": [
+          "npm:public"
+        ],
+        "metadata": {
+          "targetGroups": {
+            "NPM Scripts": [
+              "build",
+              "start",
+              "lint",
+              "dopublish"
+            ]
+          },
+          "description": ""
+        },
+        "implicitDependencies": []
+      }
+    },
     "@cc-infra/eslint-config": {
       "name": "@cc-infra/eslint-config",
       "type": "lib",
@@ -11767,6 +11858,13 @@
       }
     ],
     "create-new-project": [],
+    "@cc-infra/edge-ioc-swagger": [
+      {
+        "source": "@cc-infra/edge-ioc-swagger",
+        "target": "@cc-infra/edge-ioc",
+        "type": "static"
+      }
+    ],
     "@cc-infra/eslint-config": [
       {
         "source": "@cc-infra/eslint-config",

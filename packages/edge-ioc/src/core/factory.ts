@@ -33,7 +33,6 @@ function handlerDispatcher(
   iocContainer: Container,
 ) {
   const { path, method } = request;
-  console.log(formatLog(method, path));
   // 探测路由
   const targetRoute = routes.get(path);
   const targetHandler = targetRoute?.get(method);

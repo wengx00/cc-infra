@@ -192,7 +192,11 @@ importers:
 
   packages/create-new-project: {}
 
-  packages/edge-ioc: {}
+  packages/edge-ioc:
+    dependencies:
+      reflect-metadata:
+        specifier: ^0.2.2
+        version: 0.2.2
 
   packages/edge-ioc-adapter-express:
     dependencies:
@@ -206,6 +210,12 @@ importers:
       '@types/busboy':
         specifier: ^1.5.4
         version: 1.5.4
+
+  packages/edge-ioc-swagger:
+    dependencies:
+      '@cc-infra/edge-ioc':
+        specifier: workspace:^
+        version: link:../edge-ioc
 
   packages/eslint-config:
     dependencies:

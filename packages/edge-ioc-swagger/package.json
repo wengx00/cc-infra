@@ -1,6 +1,6 @@
 {
-  "name": "@cc-infra/edge-ioc-adapter-express",
-  "version": "1.0.5",
+  "name": "@cc-infra/edge-ioc-swagger",
+  "version": "0.1.0",
   "description": "",
   "type": "module",
   "main": "./dist/index.js",
@@ -14,20 +14,14 @@
   },
   "scripts": {
     "build": "rollup --config rollup.config.js",
-    "start": "pnpm build && node ./dist/index.cjs",
-    "test": "vitest run",
+    "start": "pnpm build && node --inspect-brk ./dist/index.cjs",
     "lint": "eslint --ext ts --fix --color --cache --quiet .",
     "dopublish": "pnpm publish --no-git-checks --access public --registry=https://registry.npmjs.org/"
   },
   "keywords": [],
   "author": "ccweng",
   "license": "ISC",
-  "dependencies": {
-    "busboy": "^1.6.0"
-  },
-  "devDependencies": {
-    "@types/busboy": "^1.5.4"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "@cc-infra/edge-ioc": "workspace:^"
   }

@@ -1,5 +1,11 @@
 # edge-ioc
 
+## 1.0.4
+
+### Patch Changes
+
+- 生成基本的OpenAPI3.0文档
+
 ## 1.0.3
 
 ### Patch Changes
